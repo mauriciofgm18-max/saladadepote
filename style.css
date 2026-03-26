@@ -162,6 +162,16 @@ section {
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
+/* 0. BANNER */
+.top-banner {
+    background-color: #d13229;
+    color: var(--white);
+    padding: 12px 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+.top-banner p { margin: 0; display: inline-block; }
+
 /* 1. HERO */
 .logo {
   max-width: 220px;

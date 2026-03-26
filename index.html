@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="top-banner text-center">
+        <p>⚠️ ATENÇÃO: Essas receitas vão sair do ar HOJE, <span id="data-atual"></span></p>
+    </div>
+
     <!-- 1. HERO -->
     <section class="hero b-white">
         <div class="container text-center">
@@ -368,6 +372,20 @@
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
     });
+
+    // Setup dynamic date for top banner
+    const dataDisplay = document.getElementById('data-atual');
+    if (dataDisplay) {
+        const hoje = new Date();
+        const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+        const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+        
+        const diaSemana = diasSemana[hoje.getDay()];
+        const dia = hoje.getDate();
+        const mes = meses[hoje.getMonth()];
+        
+        dataDisplay.textContent = `${diaSemana}, ${dia} de ${mes}`;
+    }
     </script>
 </body>
 </html>
